@@ -1,5 +1,6 @@
 import React from 'react'
 import Users from './UserData'
+import './User.css';
 
 const User = () => {
  return (

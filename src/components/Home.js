@@ -3,6 +3,7 @@ import {
     BrowserRouter as Router, 
     Link } from 'react-router-dom';
 import User from './User';
+import './Home.css'
 
 const Home = () => {
     return (
