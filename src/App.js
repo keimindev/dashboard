@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+import { 
+  BrowserRouter as Router, 
+  Switch,
+  Route} from 'react-router-dom';
+import Home from './components/Home';
+import AddPerson from './components/Add';
 import './App.css';
+
 
 function App() {
   return (
+    <>
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <div className="content">
+      <Switch>
+      <Route path ="/add" exact><AddPerson/></Route>
+      {/* exact 속성은 완벽히 똑같아야지 실행이 된다 */}
+      <Route path ="/" exact><Home/></Route>
+      </Switch>
+     </div>
     </div>
+    </Router>
+
+    </>
   );
 }
 
