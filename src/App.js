@@ -7,7 +7,6 @@ import Home from './components/Home';
 import AddPerson from './components/Add';
 import './App.css';
 
-
 function App() {
   return (
     <>
