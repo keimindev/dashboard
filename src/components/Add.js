@@ -27,7 +27,7 @@ const AddPerson = (() => {
       setName("");
       setMobile("");
       setEmail("");
-      window.location.href="/"
+      window.location.href="/board"
     };
 
 
@@ -46,9 +46,6 @@ const AddPerson = (() => {
       setEmail(value);
     };
 
-    const backToList = () =>{
-      Router.push("/");
-    }
 
     return(
       <>
