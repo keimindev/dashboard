@@ -54,7 +54,7 @@ const AddPerson = (() => {
       <>
       <div className="container">
       <h2 className="title">회원 관리</h2>
-      <div><Link to = "/" className="list-btn"> 회원 목록</Link></div>
+      <div><Link to = "/board" className="list-btn"> 회원 목록</Link></div>
       <ul className="table">
         <li className="category">
           <ul>

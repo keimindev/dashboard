@@ -16,7 +16,7 @@ function App() {
       <Switch>
       <Route path ="/add" exact><AddPerson/></Route>
       {/* exact 속성은 완벽히 똑같아야지 실행이 된다 */}
-      <Route path ="/" exact><Home/></Route>
+      <Route path ="/board" exact><Home/></Route>
       </Switch>
      </div>
     </div>
