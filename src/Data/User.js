@@ -1,6 +1,6 @@
 import React from 'react'
 import Users from './UserData'
-import './User.css';
+import NewPerson from '../components/NewPerson';
 
 
 const User = () => {
@@ -18,9 +18,10 @@ const User = () => {
         <ul className="user-table-menu">
             <li>이름</li>
             <li>연락처</li>
-            <li>가맹점</li>
+            <li>E-mail</li>
             <li>등록일</li>
         </ul>
+        <NewPerson/>
         <Users />
         </div>
     </>

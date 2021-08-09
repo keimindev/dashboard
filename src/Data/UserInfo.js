@@ -10,7 +10,7 @@ const UserInfo = ({ users }) => {
                 <li>{user.name}</li>
                 <li>{user.phone}</li>
                 <li>{user.email}</li>
-                <li>2021-08-21</li>
+                <li>2021-08-05</li>
             </ul>
             )
         })}
