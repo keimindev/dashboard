@@ -1,12 +1,15 @@
 import React from 'react';
-import { 
-    BrowserRouter as Router, 
-    Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import User from '../Data/User';
 
-const Home = () => {
+
+const Home = ({handleLogout}) => {
     return (
         <>
+        <div className="logout-form">
+            <span>Welcome</span>
+            <span onClick={handleLogout} className="logout-btn">Log out</span>
+        </div>
         <div className="container">
          <ul className="home-category">
              <li><h2>회원 관리</h2> </li>

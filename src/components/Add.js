@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { dbService }from '../firebase';
 
 
@@ -27,21 +27,21 @@ const AddPerson = (() => {
       setName("");
       setMobile("");
       setEmail("");
-      window.location.href="/board"
+      window.location.href="/"
     };
 
 
-    const onChange = (event) => {
+    const onChangeName = (event) => {
       const {target: {value},} = event;
       setName(value);
     };
 
-    const onChange1 = (event) => {
+    const onChangeMobile = (event) => {
       const {target: {value},} = event;
       setMobile(value);
     };
 
-    const onChange2 = (event) => {
+    const onChangeEmail = (event) => {
       const {target: {value},} = event;
       setEmail(value);
     };
@@ -51,7 +51,7 @@ const AddPerson = (() => {
       <>
       <div className="container">
       <h2 className="title">회원 관리</h2>
-      <div><Link to = "/board" className="list-btn"> 회원 목록</Link></div>
+      <div><Link to = "/" className="list-btn"> 회원 목록</Link></div>
       <ul className="table">
         <li className="category">
           <ul>
@@ -63,10 +63,10 @@ const AddPerson = (() => {
         </li>
         <li className="info">
           <ul>
-            <li>강남점</li>
-            <li><input value={Name} onChange={onChange} type="text" placeholder="Name" className ="text"/></li>
-            <li><input value={Mobile} onChange={onChange1}type="text" placeholder="Mobile" className ="mobile" /></li>
-            <li><input value={Email} onChange={onChange2}type="text" placeholder="123@example.com" className ="email" /></li>
+            <li>튼튼헬스 강남점</li>
+            <li><input value={Name} onChange={onChangeName} type="text" placeholder="Name" className ="text"/></li>
+            <li><input value={Mobile} onChange={onChangeMobile}type="text" placeholder="Mobile" className ="mobile" /></li>
+            <li><input value={Email} onChange={onChangeEmail}type="text" placeholder="123@example.com" className ="email" /></li>
           </ul>
         </li>
       </ul>

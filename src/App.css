@@ -17,12 +17,131 @@ li{ list-style: none;}
   padding: 0 100px;
 }
 
-.content{
-  padding: 0 50px;
+
+/* Auth */
+
+.contain{
+  width: 100%;
+  height: 100vh;
+  background-color: #063c5e;
 }
+
+.login-form{
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-form--input{
+  padding: 0 10px;
+  width: 100%;
+  height: 40px;
+  display: block;
+  margin-bottom: 10px;
+  background-color: rgba(255,255,255, 0.4);
+  transition: all 0.8s ease;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+::placeholder{ color: #ccc;}
+
+.login-form--input:hover{
+  background-color: rgba(255,255,255,0.9);
+}
+
+h5{
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+
+
+.login-btn{
+  width: 100%;
+  height: 40px;
+  background-color: #107ec2;
+  color: #fff;
+  padding: 0 10px;
+  border:0;
+  outline: 0;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+
+.login-btn:hover{
+  background-color: #096ead;
+  box-shadow: 2px 2px 5px #222;
+}
+
+.errorMsg{
+  color: red;
+  font-size: 0.8rem;
+}
+
+.login-msg{
+  float: right;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.login-msg span{
+  color: yellow;
+  cursor: pointer;
+}
+
+
+.authSubmit {
+  text-align: center;
+  background: #04aaff;
+  color: white;
+  margin-top: 10;
+  cursor: pointer;
+}
+
+
+.authSwitch {
+  color: #04aaff;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  display: block;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
 
 /* Home */
 
+.logout-form{
+  background-color: #063c5e;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 20px 5%;
+ 
+}
+
+.logout-btn{
+  padding: 5px 15px;
+  line-height: 30px;
+  background-color: #107ec2;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  float: right;
+  cursor: pointer;
+  transform: all 0.5s ease;
+}
+
+.logout-btn:hover{
+  box-shadow: 2px 2px 2px rgba(71, 71, 71, 0.555);
+}
 
 .home-category{
   overflow: hidden;
@@ -62,19 +181,17 @@ li{ list-style: none;}
   background-color: #595858;
   min-width: 760px;
   padding: 25px;
-  padding-left: 55%;
   box-sizing: border-box;
 }
 
 .nav>ul{
-  overflow: hidden;
-  margin-right: 0px;
   min-width: 350px;
+  text-align: end;
 }
 
-.nav>ul>li{ float: left;}
 
-.nav > ul > li > input { 
+.nav > ul > li > input {
+  width: 200px; 
   height: 33px; 
   outline: none; 
   border: 0;
@@ -83,14 +200,13 @@ li{ list-style: none;}
   border-radius: 5px;
 }
 
-.search-btn,
-.reset-btn{
-  width: 60px;
+.del-btn{
+  width: 90px;
   height: 35px;
-  line-height: 35px;
-  margin-right: 5px;
-  border-radius: 5px;
   text-align: center;
+  line-height: 35px;
+  margin-left: 5px;
+  border-radius: 5px;
   background-color: teal;
   color: #fff;
   cursor: pointer;
@@ -107,7 +223,7 @@ li{ list-style: none;}
 
 .user-table-menu{
   display:grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: 50px 1fr 1fr 1fr 150px 100px;
   text-align: center;
   border-bottom: 1px solid #ccc;
   font-weight: 700;
@@ -119,7 +235,7 @@ li{ list-style: none;}
 
 .user-table-info{
   display:grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: 50px 1fr 1fr 1fr 150px 100px;
   text-align: left;
   text-indent: 1.1rem;
   border-bottom: 0px;
