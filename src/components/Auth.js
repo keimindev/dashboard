@@ -1,7 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { authService } from "../firebase";
-
-
 
 
 function Auth() {
@@ -20,25 +18,33 @@ function Auth() {
           setPassword(value);
         };
       };
+
       const onSubmit = async (event) => {
         event.preventDefault();
-        try{
-          let data;
+        try{  
+        let data;
           if(newAccount){
             //create new Account
-            data =await authService.createUserWithEmailAndPassword(
-              email, password
-            )
+            data =await authService.createUserWithEmailAndPassword(email, password)
+                                    // .catch((err) => {
+                                    //     switch(err.code){
+                                    //       case "auth/email-already-in-use":
+
+              // }
+            // })
           }else {
             //Log in
-            data = await authService.signInWithEmailAndPassword(email,password);
+            data = await authService.signInWithEmailAndPassword(email,password)
+
           }
         } catch(error){
           setError(error.message)
         }
-      };
+          
+    };
+     
 
-  
+     const toggleAccount = () =>  setNewAccount(prev => !prev)
         
     return (
         <>
@@ -68,8 +74,17 @@ function Auth() {
             <input type="submit"
              className="authInput authSubmit"
              value={newAccount ? "Create Account" : "Sign In"} />
-            {/* <span onClick={toggleAccount} className="authSwitch"> {newAccount ? "Sign In" : "Create Account"}</span> */}
             </div>
+            {error}
+             {newAccount ? (
+               <>
+               <div className="authSwitch">Have you account? <span onClick={toggleAccount}>Sign In</span></div>
+               </>
+               ) : (
+                <>
+                <div className="authSwitch">Don't you have account?  <span onClick={toggleAccount}>Create Account</span></div>
+                </>
+               )}
         </form>
         </div>  
         </>

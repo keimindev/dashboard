@@ -6,7 +6,7 @@ const UserInfo = ({ users }) => {
         {users.map(user => {
             return(
                 <ul className="user-table-info" key={user.id}>
-                <li>✔</li>
+                <li>{user.id}</li>
                 <li>{user.name}</li>
                 <li>{user.phone}</li>
                 <li>{user.email}</li>

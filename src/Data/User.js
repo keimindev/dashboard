@@ -28,9 +28,10 @@ const User = () => {
             <li>등록일</li>
             <li>비고</li>
         </ul>
-        <div style={{"height":"40px"}}></div>
-        <NewPerson val={search}/>
+
+
         <Users />
+        <NewPerson val={search}/>
         </div>
     </>
     )

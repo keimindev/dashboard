@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import User from '../Data/User';
+import { authService } from '../firebase';
 
 
-const Home = ({handleLogout}) => {
+const Home = () => {
+    const handleLogout = () => authService.signOut();
+
+
     return (
         <>
         <div className="logout-form">

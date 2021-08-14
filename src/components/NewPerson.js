@@ -22,7 +22,7 @@ function NewPerson() {
            {Names.map( name => {
                return(
                 <ul className="user-table-info" key={name.id}>
-                <li>✔</li>
+                <li>{name.index}</li>
                 <li>{name.Name}</li>
                 <li>{name.Mobile}</li>
                 <li>{name.Email}</li>
