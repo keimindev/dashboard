@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import NewPerson from './NewPerson'
 
 
+
 const User = () => {
   //search name
   const [search, setSearch] = useState("")
@@ -26,9 +27,9 @@ const User = () => {
             <li>Mobile</li>
             <li>E-mail</li>
             <li>Register</li>
-            <li> </li>
+            <li></li>
         </ul>
-        <NewPerson search={search} setSearch={setSearch}/>
+        <NewPerson search={search} setSearch={setSearch} />
     </div>
     </>
     )

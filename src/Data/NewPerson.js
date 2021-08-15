@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState} from 'react'
 import { dbService }from '../firebase';
 
 function NewPerson({ search, setSearch }) {
@@ -17,11 +17,10 @@ function NewPerson({ search, setSearch }) {
     }, [])
 
 
-    const handleDelete = async (e) => {
-        const index = e.target.value
-        const ok = window.confirm("Are you sure you want to delete this nweet?");
-         if(ok){
-            await dbService.doc(`names/${Names[index].id}`).delete();
+    const handleDelete = async () => {
+        const ok = window.confirm("Are you sure you want to delete this member?");
+        if(ok){
+            await dbService.doc(`names/${Names.id}`).delete();
         }
     }
 
@@ -37,14 +36,14 @@ function NewPerson({ search, setSearch }) {
                }else if(name.Mobile.toString().includes(search.toString())){
                    return name
                }
-           }).map( name => {
+           }).map( name  => {
                return(
                 <ul className="user-table-info" key={name.id}>
                 <li>{name.Name}</li>
                 <li>{name.Mobile}</li>
                 <li>{name.Email}</li>
                 <li>{name.createdAt}</li>
-                <li className="del-btn" onClick={handleDelete}>Delete</li>
+                <li><button className="del-btn" onClick={handleDelete}>Delete</button></li>
                 </ul>
                )
            }

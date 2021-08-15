@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { dbService, authService }from '../firebase';
+import { useHistory } from "react-router-dom";
 
 
 const AddPerson = (() => {
@@ -14,6 +15,7 @@ const AddPerson = (() => {
     const today = new Date().getDate();
     const getDay = today<10 ? `0${today}` : today;
 
+    const history = useHistory();
     const onSubmit = async (event) => {
       event.preventDefault();
       //firebase.firestorage.doc에서 정보 찾아서 넣기
@@ -27,7 +29,7 @@ const AddPerson = (() => {
       setName("");
       setMobile("");
       setEmail("");
-      window.location.href="/"
+      history.push("/");
     };
 
 
@@ -48,7 +50,7 @@ const AddPerson = (() => {
 
     const handleLogout = () => {
       authService.signOut();
-      window.location.href="/"
+      history.push("/");
     }
     return(
       <>

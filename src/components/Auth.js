@@ -67,7 +67,7 @@ function Auth() {
              className="authInput authSubmit"
              value={newAccount ? "Create Account" : "Sign In"} />
             </div>
-            {error}
+            <p className="error-msg">{error}</p>
              {newAccount ? (
                <>
                <div className="authSwitch">Have you account? <span onClick={toggleAccount}>Sign In</span></div>
