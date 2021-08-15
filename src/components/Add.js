@@ -18,14 +18,14 @@ const AddPerson = (() => {
     const history = useHistory();
     const onSubmit = async (event) => {
       event.preventDefault();
-      //firebase.firestorage.doc에서 정보 찾아서 넣기
-      await dbService.collection("names").add({
-        //collction key
+      const personInfo = {
         Name,
         Mobile,
         Email,
         createdAt: `${year}-${getMon}-${getDay}`,
-      });
+      }
+      //firebase.firestorage.doc에서 정보 찾아서 넣기
+      await dbService.collection("names").add(personInfo);
       setName("");
       setMobile("");
       setEmail("");

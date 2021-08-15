@@ -12,6 +12,7 @@ const User = () => {
 
   return (
     <>
+    <div className="data-table">
     <div className="nav">
       <div>
         <input 
@@ -30,7 +31,8 @@ const User = () => {
             <li></li>
         </ul>
         <NewPerson search={search} setSearch={setSearch} />
-    </div>
+        </div>
+        </div>
     </>
     )
 

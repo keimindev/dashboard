@@ -13,7 +13,7 @@ h2{
 li{ list-style: none;}
 
 .container{
-  padding: 0 100px 100px 100px;
+  padding: 0 300px 100px 300px;
 
 }
 
@@ -108,7 +108,7 @@ h5{
   color: #fff;
   font-size: 2rem;
   font-weight: 700;
-  padding: 20px 5%;
+  padding: 20px 300px;
  
 }
 
@@ -162,10 +162,11 @@ h5{
 
 /* User */
 
+
 .nav{
   margin-top: 30px;
   background-color: #595858;
-  min-width: 760px;
+  min-width: 700px;
   padding: 25px;
   box-sizing: border-box;
 }
@@ -197,12 +198,11 @@ h5{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 150px 100px;
   text-align: center;
-  border-bottom: 1px solid #ccc;
   font-weight: 700;
 }
 
 
-.user-table-menu>li{ border-right: 1px solid #ccc;}
+.user-table-menu>li{ border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;}
 .user-table-menu>li:last-child{ border-right: 0px; }
 
 .user-table-info{
@@ -219,9 +219,10 @@ h5{
   overflow: hidden;
 }
 
+
 .user-table-info>li:last-child {
-  border-right: 0px;
   text-indent: 0rem;
+  line-height: 30px;
 }
 
 .del-btn{

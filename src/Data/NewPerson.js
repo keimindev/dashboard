@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import { dbService }from '../firebase';
 
-function NewPerson({ search, setSearch }) {
+function NewPerson({ search, setSearch,  }) {
     //firebase에 있는 name 가져오기
     const [Names, setNames] = useState([]);
 
@@ -17,13 +17,13 @@ function NewPerson({ search, setSearch }) {
     }, [])
 
 
-    const handleDelete = async () => {
+    const handleDelete = async (e) => {
+        const val =e.target.value
         const ok = window.confirm("Are you sure you want to delete this member?");
         if(ok){
-            await dbService.doc(`names/${Names.id}`).delete();
+            await dbService.doc(`names/${val}`).delete();
         }
     }
-
 
     return (
         <>      
@@ -43,7 +43,7 @@ function NewPerson({ search, setSearch }) {
                 <li>{name.Mobile}</li>
                 <li>{name.Email}</li>
                 <li>{name.createdAt}</li>
-                <li><button className="del-btn" onClick={handleDelete}>Delete</button></li>
+                <li><button className="del-btn" value={name.id} onClick={handleDelete}>Delete</button></li>
                 </ul>
                )
            }
