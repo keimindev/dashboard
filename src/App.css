@@ -10,13 +10,22 @@ h2{
   font-weight: normal; color: #222;
 }
 
-
 li{ list-style: none;}
 
 .container{
-  padding: 0 100px;
+  padding: 0 100px 100px 100px;
+
 }
 
+.loading{
+  width: 100%;
+  height: 100vh;
+  line-height: 100vh;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: #063c5e;
+  color: #fff;
+}
 
 /* Auth */
 
@@ -155,13 +164,13 @@ h5{
   box-sizing: border-box;
 }
 
-.nav>ul{
+.nav>div{
   min-width: 350px;
   text-align: end;
 }
 
 
-.nav > ul > li > input {
+.nav > div > input {
   width: 200px; 
   height: 33px; 
   outline: none; 
@@ -170,9 +179,6 @@ h5{
   padding-left: 10px;
   border-radius: 5px;
 }
-
-
-.search-btn{ background-color: #1DA1F2;}
 
 .user-table{
   border: 1px solid #ccc;
@@ -183,7 +189,7 @@ h5{
 
 .user-table-menu{
   display:grid;
-  grid-template-columns: 50px 1fr 1fr 1fr 150px 100px;
+  grid-template-columns: 1fr 1fr 1fr 150px 100px;
   text-align: center;
   border-bottom: 1px solid #ccc;
   font-weight: 700;
@@ -195,7 +201,7 @@ h5{
 
 .user-table-info{
   display:grid;
-  grid-template-columns: 50px 1fr 1fr 1fr 150px 100px;
+  grid-template-columns: 1fr 1fr 1fr 150px 100px;
   text-align: left;
   text-indent: 1.1rem;
   border-bottom: 0px;

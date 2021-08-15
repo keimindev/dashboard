@@ -1,26 +1,39 @@
-import React, {useEffect, useState } from 'react';
-import axios from 'axios';
-import UserInfo from './UserInfo';
+import React, {useState} from 'react'
+import NewPerson from './NewPerson'
 
 
+const User = () => {
+  //search name
+  const [search, setSearch] = useState("")
+  const handleSearch = (e) =>{
+   setSearch(e.target.value)
+  }
 
-const Users = () =>{
-    const [users, setUsers] = useState([])
-
-    useEffect( () => { 
-        axios.get('https://jsonplaceholder.typicode.com/users')
-            .then( response => { 
-                setUsers(response.data);
-            });
-    }, []);
-
-    return(
-        <>
-        <UserInfo users={users}/>
-        </>
+  return (
+    <>
+    <div className="nav">
+      <div>
+        <input 
+            type="text" 
+            placeholder="Search name or mobile" 
+            className="search"
+            onChange={handleSearch}/>
+      </div>
+    </div>
+    <div className="user-table">
+        <ul className="user-table-menu">
+            <li>Name</li>
+            <li>Mobile</li>
+            <li>E-mail</li>
+            <li>Register</li>
+            <li> </li>
+        </ul>
+        <NewPerson search={search} setSearch={setSearch}/>
+    </div>
+    </>
     )
 
 }
 
 
-export default Users
+export default User

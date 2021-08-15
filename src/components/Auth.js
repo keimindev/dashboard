@@ -24,16 +24,8 @@ function Auth() {
         try{  
         let data;
           if(newAccount){
-            //create new Account
             data =await authService.createUserWithEmailAndPassword(email, password)
-                                    // .catch((err) => {
-                                    //     switch(err.code){
-                                    //       case "auth/email-already-in-use":
-
-              // }
-            // })
           }else {
-            //Log in
             data = await authService.signInWithEmailAndPassword(email,password)
 
           }

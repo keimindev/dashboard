@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import { dbService }from '../firebase';
+import { dbService, authService }from '../firebase';
 
 
 const AddPerson = (() => {
@@ -46,24 +46,31 @@ const AddPerson = (() => {
       setEmail(value);
     };
 
-
+    const handleLogout = () => {
+      authService.signOut();
+      window.location.href="/"
+    }
     return(
       <>
+      <div className="logout-form">
+        <span>Welcome</span>
+        <span onClick={handleLogout} className="logout-btn">Log out</span>
+      </div>
       <div className="container">
-      <h2 className="title">회원 관리</h2>
-      <div><Link to = "/" className="list-btn"> 회원 목록</Link></div>
+      <h2 className="title">Management</h2>
+      <div><Link to = "/" className="list-btn"> Member List</Link></div>
       <ul className="table">
         <li className="category">
           <ul>
-            <li>가맹점</li>
-            <li>회원명</li>
-            <li>휴대전화</li>
+            <li>Place</li>
+            <li>Name</li>
+            <li>Mobile</li>
             <li>E-mail</li>
           </ul>
         </li>
         <li className="info">
           <ul>
-            <li>튼튼헬스 강남점</li>
+            <li>Fit Gym Seoul</li>
             <li><input value={Name} onChange={onChangeName} type="text" placeholder="Name" className ="text"/></li>
             <li><input value={Mobile} onChange={onChangeMobile}type="text" placeholder="Mobile" className ="mobile" /></li>
             <li><input value={Email} onChange={onChangeEmail}type="text" placeholder="123@example.com" className ="email" /></li>

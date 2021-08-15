@@ -45,7 +45,7 @@ function App() {
         </>
         ):(
           <>
-          <p>hello</p>
+          <p className="loading">Loading...</p>
           </>
         ) }
 

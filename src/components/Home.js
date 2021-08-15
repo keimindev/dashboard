@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import User from '../Data/User';
-import { authService } from '../firebase';
+import User from '../Data/Userdata';
+import { authService, dbService } from '../firebase';
 
 
 const Home = () => {
     const handleLogout = () => authService.signOut();
-
 
     return (
         <>
@@ -16,12 +15,11 @@ const Home = () => {
         </div>
         <div className="container">
          <ul className="home-category">
-             <li><h2>회원 관리</h2> </li>
-             <li><h5>총 회원수: 0 </h5> </li>
+             <li><h2>Management</h2></li>
          </ul>
          <ul className="branch">
-            <li><Link to = "/add" className = "add-btn"> 회원 추가 </Link></li>
-            <li><h1>튼튼헬스</h1></li>
+            <li><Link to = "/add" className = "add-btn"> Add New Member </Link></li>
+            <li><h1>Fit Gym</h1></li>
          </ul>
 
         <User />

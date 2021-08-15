@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { dbService }from '../firebase';
 
-function NewPerson() {
+function NewPerson({ search, setSearch }) {
     //firebase에 있는 name 가져오기
     const [Names, setNames] = useState([]);
 
@@ -17,17 +17,34 @@ function NewPerson() {
     }, [])
 
 
+    const handleDelete = async (e) => {
+        const index = e.target.value
+        const ok = window.confirm("Are you sure you want to delete this nweet?");
+         if(ok){
+            await dbService.doc(`names/${Names[index].id}`).delete();
+        }
+    }
+
+
     return (
-        <>
-           {Names.map( name => {
+        <>      
+        
+           {Names.filter((name) => {
+               if(search == ""){
+                   return name
+               }else if(name.Name.toString().toLowerCase().includes(search.toString().toLowerCase())){
+                   return name
+               }else if(name.Mobile.toString().includes(search.toString())){
+                   return name
+               }
+           }).map( name => {
                return(
                 <ul className="user-table-info" key={name.id}>
-                <li>{name.index}</li>
                 <li>{name.Name}</li>
                 <li>{name.Mobile}</li>
                 <li>{name.Email}</li>
                 <li>{name.createdAt}</li>
-                <li className="del-btn">Delete</li>
+                <li className="del-btn" onClick={handleDelete}>Delete</li>
                 </ul>
                )
            }
